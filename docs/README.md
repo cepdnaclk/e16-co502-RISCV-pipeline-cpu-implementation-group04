@@ -19,9 +19,9 @@ This is a sample image, to show how to add images to your page. To learn more op
 
 
 ## Team
--  eNumber, Name, [email](mailto:name@email.com)
--  eNumber, Name, [email](mailto:name@email.com)
--  eNumber, Name, [email](mailto:name@email.com)
+-  E/16/319, Vindula Rathnayke, [email](mailto:name@email.com)
+-  E/16/320, Subhash Rathnayke, [email](mailto:name@email.com)
+
 
 ## Table of Contents
 1. [Introduction](#introduction)
