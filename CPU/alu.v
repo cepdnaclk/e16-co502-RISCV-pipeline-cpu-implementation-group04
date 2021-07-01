@@ -45,6 +45,7 @@ module alu(DATA1, DATA2, RESULT,SELECT,BEQ);
 	4'b1001:
 	    RESULT = DATA1/DATA2;
 	//slt less than
+	4'b1010
 	    RESULT=($signed(DATA1) < $signed(DATA2)) ? 1'b1 : 1'b0;
         default: 
             RESULT = 0; 
