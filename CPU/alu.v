@@ -4,6 +4,7 @@ module alu(DATA1, DATA2, RESULT,SELECT,BEQ);
 	input [0:31]DATA2;
 	input [0:3]SELECT;						//inputs
 	output [0:31]RESULT;						//out put result
+	output RESULT1;
 	//output BEQ;
 
 	reg [0:7]RESULT;
@@ -32,7 +33,7 @@ module alu(DATA1, DATA2, RESULT,SELECT,BEQ);
             RESULT = DATA1 >> DATA2;
         //subtract
         4'b0110: 
-            RESULT = DATA1 - DATA2;
+            RESULT = DATA1 - DATA2; 
         //sra need to implement
         4'b0111:
             RESULT = DATA1 <<< DATA2;
@@ -43,6 +44,8 @@ module alu(DATA1, DATA2, RESULT,SELECT,BEQ);
 	//divition
 	4'b1001:
 	    RESULT = DATA1/DATA2;
+	//slt less than
+	    RESULT=($signed(DATA1) < $signed(DATA2)) ? 1'b1 : 1'b0;
         default: 
             RESULT = 0; 
         
