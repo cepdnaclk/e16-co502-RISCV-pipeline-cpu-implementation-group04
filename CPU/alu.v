@@ -40,9 +40,9 @@ module alu(DATA1, DATA2, RESULT,SELECT,BEQ);
         //multiplication
         4'b1000:
             RESULT = DATA1 * DATA2;
-	
+	//divition
 	4'b1001:
-	    RESULT = DATA1/DATA@;
+	    RESULT = DATA1/DATA2;
         default: 
             RESULT = 0; 
         
