@@ -26,20 +26,23 @@ module alu(DATA1, DATA2, RESULT,SELECT,BEQ);
             RESULT = DATA1 ^ DATA2;
         //sll 
         4'b0100: 
-            RESULT = 0; 
+            RESULT = DATA1 << DATA2; 
         //srl need to implement
         4'b0101: 
-            RESULT = 0;
+            RESULT = DATA1 >> DATA2;
         //subtract
         4'b0110: 
             RESULT = DATA1 - DATA2;
         //sra need to implement
         4'b0111:
-            RESULT = 0;
+            RESULT = DATA1 <<< DATA2;
         
-        //does nothing
-        4'b1010:
-            RESULT = B;
+        //multiplication
+        4'b1000:
+            RESULT = DATA1 * DATA2;
+	
+	4'b1001:
+	    RESULT = DATA1/DATA@;
         default: 
             RESULT = 0; 
         
