@@ -1,24 +1,17 @@
 {
+    "title": "RISCV Pipeline CPU",
     "team": [
         {
             "name": "Vindula Rathnayake",
             "email": "e16319@eng.pdn.ac.lk",
             "eNumber": "E/16/319",
             "github_profile":"https://github.com/VindulaNR",
-            "linkedin_profile":"https://www.linkedin.com/in/vindula-rathnayake-b32a72179/",
+            "linkedin_profile":"https://www.linkedin.com/in/vindula-rathnayake-b32a72179/"
         },
         {
             "name": "Subhash Rathnayke",
             "email": "e16320@eng.pdn.ac.lk",
             "eNumber": "E/16/320",
-            "github_profile":"#",
-            "linkedin_profile":"#",
-            "website": "#"
-        },
-        {
-            "name": "Team Member Name 3",
-            "email": "email@eng.pdn.ac.lk",
-            "eNumber": "E/yy/xxx",
             "github_profile":"#",
             "linkedin_profile":"#",
             "website": "#"
@@ -34,7 +27,7 @@
         {
             "name": "Dr. Mahanama wickramasinghe",
             "email": "mahanamaw@eng.pdn.ac.lk",
-            "linkedin_profile":"https://www.linkedin.com/in/mahanama"
+            "linkedin_profile":"https://www.linkedin.com/in/mahanama"            
         }
     ],
     "tags": ["Verilog", "Computer Architecture"]
