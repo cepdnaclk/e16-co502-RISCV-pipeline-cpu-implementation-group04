@@ -20,11 +20,7 @@ module reg_file_tb;
         #5
         RESET = 1'b0;
 
-        /* 
-            TEST 1 starts here!
-            Should able to perfome add operation.
-            SELECT = 00000 ,DATA1 = 5, DATA2=10, RESULT should be 15
-        */
+        //Test 1: addition
 	SELECT = 5'b0;
 	DATA1 = 32'd5;
 	DATA2 = 32'd10;
