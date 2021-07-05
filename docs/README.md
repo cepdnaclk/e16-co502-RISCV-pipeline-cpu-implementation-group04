@@ -32,9 +32,23 @@ This is a sample image, to show how to add images to your page. To learn more op
 
 ## Introduction
 
- description of the real world problem and solution, impact
+This is Advance Computer Architecture project of implementing Piplined Proccesor according to the 32bit  RISC-V Instruction set. There containing all type of instructions.
 
-## Other Sub Topics
+## Pipeline Diagram with Datapath
+![Sample Image](./images/Capture.JPG)
+
+   ### Control Signals
+   - Register Read Flag
+   - Register write Flag
+   - Memory to register Flag
+   - Memory write Flag
+   - Branch Flag
+   - ALU opcode
+   - Register destination Flag
+   - ALU source Flag
+
+##Instruction Encoding System
+![Sample Image](./images/encoding.JPG)
 
 .....
 
