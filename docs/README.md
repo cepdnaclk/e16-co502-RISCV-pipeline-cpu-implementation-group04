@@ -47,7 +47,7 @@ This is Advance Computer Architecture project of implementing Piplined Proccesor
    - Register destination Flag
    - ALU source Flag
 
-##Instruction Encoding System
+## Instruction Encoding System
 ![Sample Image](./images/encoding.JPG)
 
 .....
