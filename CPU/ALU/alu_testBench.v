@@ -29,7 +29,7 @@ module alu_tb;
     	#3
     	`assert(RESULT, 32'd15);
     
-    	$display("TEST 1 : ADD Passed!");
+    	$display("TEST 0 : ADD Passed!");
 		
 		//Test 2: shift lest logical
 		#1
@@ -40,7 +40,7 @@ module alu_tb;
 		#3
     	`assert(RESULT, 32'd20);
     
-    	$display("TEST 2 : Shift Left Logical Passed!");
+    	$display("TEST 1 : Shift Left Logical Passed!");
 		
 		//Test 3: set less than
 		#1
@@ -51,7 +51,7 @@ module alu_tb;
 		#3
     	`assert(RESULT, 32'd0);
     
-    	$display("TEST 3 : Set Less Than Passed!");
+    	$display("TEST 2 : Set Less Than Passed!");
 		
 		//Test 4: set less than unsingned
 		#1
@@ -87,7 +87,7 @@ module alu_tb;
     
     	$display("TEST 7: OR Passed!");
 		
-		//Test 7: Bitwise OR
+		//Test 8: Bitwise AND
 		#1
 		SELECT = 5'b00111;
 		DATA1 = 32'd13;
@@ -96,7 +96,7 @@ module alu_tb;
 		#3
     	`assert(RESULT, 32'd8);
     
-    	$display("TEST 8: AND Passed!");
+    	$display("TEST 7: AND Passed!");
 		
 		//Test subtraction
 		#1
@@ -107,7 +107,40 @@ module alu_tb;
 		#3
     	`assert(RESULT, 32'd5);
     
-    	$display("TEST 1 : SUB Passed!");
+    	$display("TEST 16 : SUB Passed!");
+		
+		//Test Multplication
+		#1
+		SELECT = 5'b11000;
+		DATA1 = 32'd5;
+		DATA2 = 32'd2;
+		
+		#3
+    	`assert(RESULT, 32'd10);
+    
+    	$display("TEST 24 : Multiplication Passed!");
+		
+		//Test Divition
+		#1
+		SELECT = 5'b11100;
+		DATA1 = 32'd10;
+		DATA2 = 32'd2;
+		
+		#3
+    	`assert(RESULT, 32'd5);
+    
+    	$display("TEST 28 : Divition Passed!");
+		
+		//Test Remainder
+		#1
+		SELECT = 5'b11101;
+		DATA1 = 32'd27;
+		DATA2 = 32'd5;
+		
+		#3
+    	`assert(RESULT, 32'd2);
+    
+    	$display("TEST 29 : Remainder Passed!");
 		
 
         #500
