@@ -20,6 +20,9 @@ module alu(DATA1, DATA2, RESULT,SELECT);
 			RES_SRA,  	//shift right arithmatic
 			RES_FWD,	//forward
 			RES_MUL,	//multiplication
+			RES_MULH,	//multiplication higer signed * signed
+			RES_MULHU,	//multiplication higher unsigned * unsigned
+			RES_MULHSU,	//mul higher signed * unsigned
 			RES_DIV,	//Divition
 			RES_REM,	//Remainder
 			RES_SLT,	//Less than
@@ -46,6 +49,9 @@ module alu(DATA1, DATA2, RESULT,SELECT);
 
 	//multiplication and divition operations
 	assign #1 RES_MUL = DATA1 * DATA2;
+	assign #1 RES_MULH =  $signed(DATA1) * $signed(DATA2);
+	assign #1 RES_MULHSU = $signed(DATA1) * $unsigned(DATA2);
+	assign #1 RES_MULHU = $unsigned(DATA1) * $unsigned(DATA2);	
 	assign #1 RES_DIV = DATA1 / DATA2;
 	
 	//Remainder operaion
@@ -77,8 +83,8 @@ module alu(DATA1, DATA2, RESULT,SELECT);
     	5'b00110: #1 RESULT = RES_OR; 
     	//7. AND
     	5'b00111: #1 RESULT = RES_AND;
-    	//8. 
-    	5'b01000: RESULT = 0;
+    	//8. Forwad
+    	5'b01000: RESULT = RES_FWD;
 		//9
 		5'b01001: RESULT = 0;
 		//10
@@ -111,12 +117,12 @@ module alu(DATA1, DATA2, RESULT,SELECT);
 		5'b10111: RESULT = 0;
 		//24. Multiplication
 		5'b11000: RESULT = RES_MUL;
-		//25. 
-		5'b11001: RESULT = 0;
-		//26. 
-		5'b11010: RESULT = 0;
-		//27. 
-		5'b11011: RESULT = 0;
+		//25. Multiplication high signed
+		5'b11001: RESULT = RES_MULH;
+		//26. Multiplication high signed * unsigned
+		5'b11010: RESULT = RES_MULHSU;
+		//27. Multiplication high unsigned
+		5'b11011: RESULT = RES_MULHU;
 		//28. DIV DIvition
 		5'b11100: RESULT = RES_DIV;
 		//29. REM Remainder
