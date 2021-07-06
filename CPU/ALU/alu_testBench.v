@@ -1,3 +1,8 @@
+/*Test bench for alu testing
+compile : iverilog -o alu_testBench alu_TestBench.v
+run: vvp alu_testBench
+gtkwave : gtkwave alu_wave.vcd
+*/
 `include "../assert.v" 
 `include "alu.v"
 `timescale 1ns/100ps
