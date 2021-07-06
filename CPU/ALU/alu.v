@@ -55,11 +55,15 @@ module alu(DATA1, DATA2, RESULT,SELECT);
 	assign #1 RES_DIV = DATA1 / DATA2;
 	
 	//Remainder operaion
-	assign #1 RES_REM = DATA1 % DATA2;
+	assign #1 RES_REM = $signed(DATA1) % $signed(DATA2);
+	assign #1 RES_REMU = $unsigned(DATA1) % $unsigned(DATA2);
 	
 	//less than operation
 	assign #1 RES_SLT = ($signed(DATA1) < $signed(DATA2)) ? 1'b1 : 1'b0;
 	assign #1 RES_SLTU = ($unsigned(DATA1) < $unsigned(DATA2)) ? 1'b1 : 1'b0;
+	
+	
+	//
 	
 	
 	//reg BEQ;
@@ -125,12 +129,12 @@ module alu(DATA1, DATA2, RESULT,SELECT);
 		5'b11011: RESULT = RES_MULHU;
 		//28. DIV DIvition
 		5'b11100: RESULT = RES_DIV;
-		//29. REM Remainder
+		//29. REM signed Remainder
 		5'b11101: RESULT = RES_REM;
 		//30. 
 		5'b11110: RESULT = 0;
-		//31. 
-		5'b11111: RESULT = 0;
+		//31. REM Unsigned 
+		5'b11111: RESULT = RES_REMU;
         default: 
             RESULT = 0; 
         endcase
