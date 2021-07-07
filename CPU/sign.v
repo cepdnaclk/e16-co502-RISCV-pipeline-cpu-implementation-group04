@@ -1,19 +1,19 @@
 //sign extention
 module sign(SIGNIN,SIGNOUT);
 //port declaration
-input [11:0] SIGNIN;
+input [12:0] SIGNIN;
 output reg [31:0] SIGNOUT;
-reg [10:0] SIGNHOLD;
+reg [11:0] SIGNHOLD;
 
 always @(SIGNIN) begin 
-	if(SIGNIN[11]==1'b0) begin   //for positive in
-		SIGNOUT = {11'b00000000_00000000_0000,SIGNIN};
+	if(SIGNIN[12]==1'b0) begin   //for positive in
+		SIGNOUT = {11'b00000000_00000000_000,SIGNIN};
 	end
-	if (SIGNIN[20]== 1'b1) begin  //for negative in
-		SIGNIN[10:0] =~SIGNIN[10:0];
-		SIGNHOLD = SIGNIN[10:0] ;
+	if (SIGNIN[12]== 1'b1) begin  //for negative in
+		SIGNHOLD[11:0] =~SIGNIN[11:0];
 		
-		SIGNOUT = {1'b1,20'b11111111_11111111_1111,SIGNHOLD[10:0]};
+		
+		SIGNOUT = {1'b1,20'b11111111_11111111_111,SIGNHOLD[11:0]};
 		
 	end
 	SIGNOUT   = SIGNOUT + 1 ;  //out the 2s complement
