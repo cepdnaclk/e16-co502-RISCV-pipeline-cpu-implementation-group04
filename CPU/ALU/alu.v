@@ -1,13 +1,12 @@
 `timescale 1ns/100ps
 //alu module for RISCV procr
 //
-module alu(DATA1, DATA2, RESULT,SELECT);			
+module alu(DATA1, DATA2, RESULT,BRANCH,SELECT);			
 	input [31:0]DATA1;						//input of Data 1 value
 	input [31:0]DATA2;						//input of data 2 value
 	input [4:0]SELECT;						//alu opecode
 	output reg [31:0]RESULT;					//output for result fot the operation
-	//output RESULT1;
-	//output BEQ;
+	output reg BRANCH;
 	
 	//alu results
 	wire[31:0] 	RES_AND,	// 1. and
@@ -28,12 +27,14 @@ module alu(DATA1, DATA2, RESULT,SELECT);
 			RES_SLT,	//Less than
 			RES_SLTU	//less thank unsigned
 			;
-	
+			
+	//for branch outputs
+	wire BR_BEQ, BR_BNE, BR_BLT, BR_BGE, BR_BLTU, BR_BGEU;
 	//AND,OR,XOR operations with 1 time unit delay
 	//these are bitwise operations
 	assign #1 RES_AND = DATA1 & DATA2;
 	assign #1 RES_OR  = DATA1 | DATA2;
-	assign #1 RES_XOR = DATA1 ^ DATA2;
+	assign #2 RES_XOR = DATA1 ^ DATA2;
 	
 	//forwad operation
 	assign #1 RES_FWD = DATA2;
@@ -63,7 +64,13 @@ module alu(DATA1, DATA2, RESULT,SELECT);
 	assign #1 RES_SLTU = ($unsigned(DATA1) < $unsigned(DATA2)) ? 1'b1 : 1'b0;
 	
 	
-	//
+	//Branch signals
+	assign #1 BR_BEQ = (DATA1 == DATA2);
+	assign #1 BR_BNE = (DATA1 != DATA2);
+	assign #1 BR_BLT = ($signed(DATA1) < $signed(DATA2));
+	assign #1 BR_BGE = ($signed(DATA1) >= $signed(DATA2));
+	assign #1 BR_BLTU = DATA1 < DATA2;
+	assign #1 BR_BGEU = DATA1 >= DATA2;
 	
 	
 	//reg BEQ;
@@ -84,25 +91,9 @@ module alu(DATA1, DATA2, RESULT,SELECT);
     	//5. Shift Right Logic
     	5'b00101: RESULT = RES_SRL;
     	//6. OR
-    	5'b00110: #1 RESULT = RES_OR; 
+    	5'b00110:  RESULT = RES_OR; 
     	//7. AND
-    	5'b00111: #1 RESULT = RES_AND;
-    	//8. Forwad
-    	5'b01000: RESULT = RES_FWD;
-		//9
-		5'b01001: RESULT = 0;
-		//10
-		5'b01010: RESULT = 0;
-		//11
-		5'b01011: RESULT = 0;
-		//12
-		5'b01100: RESULT = 0;
-		//13. 
-		5'b01101: RESULT = 0;
-		//14
-		5'b01110: RESULT = 0;
-		//15
-		5'b01111: RESULT = 0;
+    	5'b00111:  RESULT = RES_AND;
 		//16. Subtract
 		5'b10000: #1 RESULT = RES_SUB;
 		//17. 
@@ -131,12 +122,34 @@ module alu(DATA1, DATA2, RESULT,SELECT);
 		5'b11100: RESULT = RES_DIV;
 		//29. REM signed Remainder
 		5'b11101: RESULT = RES_REM;
-		//30. 
-		5'b11110: RESULT = 0;
+		//30. Forward
+		5'b11110: RESULT = RES_FWD;
 		//31. REM Unsigned 
 		5'b11111: RESULT = RES_REMU;
         default: 
             RESULT = 0; 
         endcase
+		
+		//Seting branch val
+		case(SELECT)
+		//8.
+    	5'b01000: BRANCH = BR_BEQ;
+		//9
+		5'b01001: BRANCH = BR_BNE;
+		//10
+		5'b01010: BRANCH = 0;
+		//11
+		5'b01011: BRANCH = 0;
+		//12
+		5'b01100: BRANCH = BR_BLT;
+		//13. 
+		5'b01101: BRANCH = BR_BGE;
+		//14
+		5'b01110: BRANCH = BR_BLTU;
+		//15
+		5'b01111: BRANCH = BR_BGEU;
+		default: 
+            BRANCH = 0;
+		endcase
     end
 endmodule
