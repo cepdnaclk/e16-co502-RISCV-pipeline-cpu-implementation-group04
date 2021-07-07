@@ -3,13 +3,13 @@ layout: home
 permalink: index.html
 
 # Please update this with your repository name and title
-repository-name: eYY-XXX-project-template
+repository-name: e16-co502-RISCV-pipeline-cpu-group04
 title:
 ---
 
 [comment]: # "This is the standard layout for the project, but you can clean this and use your own template"
 
-# Project Title
+# RISCV Pipeline Proccesor Impementation
 
 ---
 
@@ -19,22 +19,37 @@ This is a sample image, to show how to add images to your page. To learn more op
 
 
 ## Team
--  eNumber, Name, [email](mailto:name@email.com)
--  eNumber, Name, [email](mailto:name@email.com)
--  eNumber, Name, [email](mailto:name@email.com)
+-  E/16/319, Vindula Rathnayke, [email](mailto:name@email.com)
+-  E/16/320, Subhash Rathnayke, [email](mailto:name@email.com)
+
 
 ## Table of Contents
 1. [Introduction](#introduction)
-2. [Other Sub Topics](#other-sub-topics)
-3. [Links](#links)
+2. [Pipeline Diagram](#pipeline-diagram-with-datapath)
+3. [Instruction Encoding System](#instruction-encoding-system)
+4. [Links](#links)
 
 ---
 
 ## Introduction
 
- description of the real world problem and solution, impact
+This is Advance Computer Architecture project of implementing Piplined Proccesor according to the 32bit  RISC-V Instruction set. There containing all type of instructions.
 
-## Other Sub Topics
+## Pipeline Diagram with Datapath
+![Sample Image](./images/Capture.JPG)
+
+   ### Control Signals
+   - Register Read Flag
+   - Register write Flag
+   - Memory to register Flag
+   - Memory write Flag
+   - Branch Flag
+   - ALU opcode
+   - Register destination Flag
+   - ALU source Flag
+
+## Instruction Encoding System
+![Sample Image](./images/encoding.JPG)
 
 .....
 
