@@ -8,14 +8,15 @@ module ctrl_unit(OP,FUN3,FUN7,CLK,RESET,MEM_READ,MEM_WRITE,REG_WRITE,MEM_TO_REG,
 	input CLK,RESET;
 	//declaring output
 	output reg [4:0] ALU_OP;
-	output reg MEM_READ,MEM_WRITE,REG_WRITE,MEM_TO_REG,BRANCH,REG_DEST,ALU_SOURCE;
+	output reg [2:0]  MEM_READ,MEM_WRITE;
+	output regREG_WRITE,MEM_TO_REG,BRANCH,REG_DEST,ALU_SOURCE;
 
 	
 //r type instructions
 	always @ (OP,FUN3,FUN7) begin
 		if(OP[6:0] == 7'b0110011)  begin  //rtype
-			MEM_READ = 1'b0;
-			MEM_WRITE = 1'b0;
+			MEM_READ = 3'b000;
+			MEM_WRITE = 3'b000;
 			REG_WRITE = 1'b1;
 			MEM_TO_REG = 1'b0;
 			BRANCH = 1'b0;
