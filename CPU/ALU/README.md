@@ -1,3 +1,9 @@
+# ALU
+___
+
+## ALU OP codes
+___
+
 | ALUOP[4:0] |	RESULT[31:0]	| BRANCH |
 | ---:       |     :---:      |   ---: |
 | 00000   	 |  RES_ADD	      |    0   |
