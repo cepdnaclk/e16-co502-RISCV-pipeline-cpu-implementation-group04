@@ -1,6 +1,8 @@
+
 # RISCV Pipeline Proccesor Impementation
 
 ---
+
 
 ## Team
 -  E/16/319, Vindula Rathnayke, [email](mailto:name@email.com)
@@ -31,7 +33,7 @@ This is Advance Computer Architecture project of implementing Piplined Proccesor
    - ALU opcode
    - Register destination Flag
    - ALU source Flag
-___
+
 ## Instruction Encoding System
 ![Sample Image](./images/encoding.JPG)
 
