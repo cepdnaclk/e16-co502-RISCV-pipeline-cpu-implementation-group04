@@ -10,10 +10,11 @@ module alu_tb;
 
     reg CLK, RESET;
     wire [31:0] RESULT;
+	wire BRANCH;
     reg [31:0] DATA1, DATA2;
     reg [4:0] SELECT;
 
-    alu myalu(DATA1, DATA2, RESULT, SELECT);
+    alu myalu(DATA1, DATA2, RESULT, BRANCH, SELECT);
     
     initial begin
         CLK = 1'b0;
@@ -112,7 +113,40 @@ module alu_tb;
 		#3
     	`assert(RESULT, 32'd5);
     
-    	$display("TEST 16 : SUB Passed!");
+    	$display("TEST 7 : SUB Passed!");
+		
+		//Test BEQ
+		#1
+		SELECT = 5'b01000;
+		DATA1 = 32'd10;
+		DATA2 = 32'd10;
+		
+		#3
+    	`assert(BRANCH, 1);
+    
+    	$display("TEST 8 : BEQ Passed!");
+		
+		//Test BNE
+		#1
+		SELECT = 5'b01001;
+		DATA1 = 32'd10;
+		DATA2 = 32'd11;
+		
+		#3
+    	`assert(BRANCH, 1);
+    
+    	$display("TEST 9 : BNE Passed!");
+		
+		//Test BLT
+		#1
+		SELECT = 5'b01100;
+		DATA1 = 32'd10;
+		DATA2 = 32'd11;
+		
+		#3
+    	`assert(BRANCH, 1);
+    
+    	$display("TEST 12 : BLT Passed!");
 		
 		//Test Multplication
 		#1
