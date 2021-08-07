@@ -66,7 +66,8 @@ module instruction_cache(clock, reset, pc, instruction, busywait, mem_busywait, 
       end  
       //read the instruction
       if (read) begin
-        if (hit && !mem_busy wait) begin
+        if (hit && !mem_busywait)
+		begin
        
         case (offset) 
             2'b00: instruction = cache_memory[index][31:0];
