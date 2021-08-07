@@ -28,8 +28,9 @@ module dcache ( clock,
     reg hit, dirty, valid;
     wire [2:0] index;
     wire [1:0] offset;
+	wire [26:0] tag;
     reg [127:0] data;
-    reg [26:0] cache_tag,tag;
+    reg [26:0] cache_tag;
     reg tagout;
     
     //set the busywait of the cache memory
@@ -225,6 +226,3 @@ module dcache ( clock,
     /* Cache Controller FSM End */
 
 endmodule
-
-
-H:\aca\sem6\co326\lab02\mplab\lab02.X\dist\default\production
