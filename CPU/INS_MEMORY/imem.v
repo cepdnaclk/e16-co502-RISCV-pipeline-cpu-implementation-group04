@@ -24,14 +24,14 @@ begin
     readaccess = 0;
 
     // Sample program given below. You may hardcode your software program here, or load it from a file:
-    {memory_array[10'd3],  memory_array[10'd2],  memory_array[10'd1],  memory_array[10'd0]}  = 32'b00001000000001000000000000001010; // loadi 4 #10
-    {memory_array[10'd7],  memory_array[10'd6],  memory_array[10'd5],  memory_array[10'd4]}  = 32'b00001000000001010000000000000101; // loadi 5 #5
-    {memory_array[10'd11], memory_array[10'd10], memory_array[10'd9],  memory_array[10'd8]}  = 32'b00000001000001100000010000000101; // add 6 4 5
-    {memory_array[10'd15], memory_array[10'd14], memory_array[10'd13], memory_array[10'd12]} = 32'b00001000000000010000000001011010; // loadi 1 90
-    {memory_array[10'd19], memory_array[10'd18], memory_array[10'd17], memory_array[10'd16]} = 32'b00001001000000010000000100000100; // sub 1 1 4
-    {memory_array[10'd23], memory_array[10'd22], memory_array[10'd21], memory_array[10'd20]} = 32'b00000100000000100000010000000101; // mult 2 4 5 
-    {memory_array[10'd27], memory_array[10'd26], memory_array[10'd25], memory_array[10'd24]} = 32'b00111000000000000000001010001100; // swi 2 0x8C
-    {memory_array[10'd31], memory_array[10'd30], memory_array[10'd29], memory_array[10'd28]} = 32'b00101000000001000000000010001100; // lwi 4 0x8C
+    {memory_array[10'd3],  memory_array[10'd2],  memory_array[10'd1],  memory_array[10'd0]}  = 32'b00000000101000000000000010010011; // addi x1 x0 10
+    {memory_array[10'd7],  memory_array[10'd6],  memory_array[10'd5],  memory_array[10'd4]}  = 32'b00000000000100001000000100110011; // add x2 x1 x1
+    {memory_array[10'd11], memory_array[10'd10], memory_array[10'd9],  memory_array[10'd8]}  = 32'b00000000001000001000000110110011; // add x3 x1 x2
+    {memory_array[10'd15], memory_array[10'd14], memory_array[10'd13], memory_array[10'd12]} = 32'b01000000001000011000001000110011; // sub x4 x3 x2
+    {memory_array[10'd19], memory_array[10'd18], memory_array[10'd17], memory_array[10'd16]} = 32'b00000000001000001001001010110011; // sll x5 x1 x2
+    {memory_array[10'd23], memory_array[10'd22], memory_array[10'd21], memory_array[10'd20]} = 32'b00000000010000000010010100100011; // sw x4 0(x0)
+    {memory_array[10'd27], memory_array[10'd26], memory_array[10'd25], memory_array[10'd24]} = 32'b00000000000100010000000100110011; // add x2 x2 x1
+    {memory_array[10'd31], memory_array[10'd30], memory_array[10'd29], memory_array[10'd28]} = 32'b00000000101000000010001010000011; // lw x5 0(x0)
 end
 
 
