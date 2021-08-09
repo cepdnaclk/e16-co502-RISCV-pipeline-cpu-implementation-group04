@@ -14,6 +14,7 @@ module ctrl_unit(OP,FUN3,FUN7,CLK,RESET,MEM_READ,MEM_WRITE,REG_WRITE,MEM_TO_REG,
 	
 //r type instructions*************************************************************************************
 	always @ (OP,FUN3,FUN7) begin
+		#1
 		if(OP[6:0] == 7'b0110011)  begin  //rtype
 			MEM_READ = 3'b000;
 			MEM_WRITE = 3'b000;
@@ -277,7 +278,7 @@ module ctrl_unit(OP,FUN3,FUN7,CLK,RESET,MEM_READ,MEM_WRITE,REG_WRITE,MEM_TO_REG,
 								
 		
 		//AUIPC
-			if(OP[6:0] == 7'b0010011)  begin  //Itype
+			if(OP[6:0] == 7'b0011111)  begin  //Itype
 				MEM_READ = 3'b000;
 				MEM_WRITE =  3'b000;
 				REG_WRITE = 1'b1;
