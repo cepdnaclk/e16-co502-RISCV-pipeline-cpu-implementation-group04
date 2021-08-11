@@ -9,7 +9,7 @@
 		//one time unit delay for assigning setting out vale
 		#1
 		if (!RESET & !BUSY_WAIT) begin
-			PC_INCREMENT4_OUT = PC_INCREMENT4;
+			PC_INCREMENT4_OUT = #1 PC_INCREMENT4;
 			INSTRUCTION_OUT = INSTRUCTION;
 		end
 	end
