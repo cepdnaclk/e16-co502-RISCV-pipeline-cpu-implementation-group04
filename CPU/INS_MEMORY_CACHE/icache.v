@@ -23,7 +23,7 @@ module instruction_cache(clock, reset, pc, instruction, busywait, mem_busywait, 
    //and decode the address(pc)
    always @(pc) begin
      if (pc != -4 ) begin
-       busywait = 1; 
+       //busywait = 1; 
        read = 1;
        offset = pc[3:2];
        index = pc[6:4];
