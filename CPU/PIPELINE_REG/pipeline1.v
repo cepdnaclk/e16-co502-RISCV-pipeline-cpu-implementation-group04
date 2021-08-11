@@ -17,8 +17,8 @@
 	always @(*) begin
 		#1
 		if(RESET == 1'b1) begin
-			INSTRUCTION_OUT=32'd0;
-			PC_INCREMENT4_OUT = -32'd4;
+			INSTRUCTION_OUT <= 32'd0;
+			PC_INCREMENT4_OUT <=  -32'd4;
 		end
 	end
 endmodule
