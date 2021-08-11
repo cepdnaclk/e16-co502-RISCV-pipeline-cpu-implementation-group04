@@ -1,4 +1,3 @@
-//register module
 module reg_file(IN, OUT1, OUT2, INADDRESS, OUT1ADDRESS, OUT2ADDRESS, WRITEENABLE, CLK, RESET);
 	//port declaration 
 	//create a  8 bit input port
@@ -56,9 +55,12 @@ module reg_file(IN, OUT1, OUT2, INADDRESS, OUT1ADDRESS, OUT2ADDRESS, WRITEENABLE
 	always @(OUT1ADDRESS,OUT2ADDRESS) begin//when register address are updated registers are reading
 	
 		if(i != 1) begin  //if the reset happen at the same time does not run this
-		#2 //time delay for reading (registers
+		#5 //time delay for reading (registers
+		//this delay aded read the data from register after 3rd previouse instruction write on register 
+		//Then we can reduse 1 nops in assember
 		OUT1 = register[OUT1ADDRESS];	
 		OUT2 = register[OUT2ADDRESS];
 		end
 	end			
 endmodule
+
