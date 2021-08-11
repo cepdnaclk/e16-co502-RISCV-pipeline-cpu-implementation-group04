@@ -12,7 +12,7 @@ module PC_UNIT(PC,PC_4,BRANCH_PC,CLK,RESET,CON_BRANCH,BUSY_WAIT);
 		pc_hold = 32'b0;//initialy it is zero
 		end
 	always @(posedge CLK,posedge RESET) begin
-		
+		#1
 		if(RESET == 1'b0  && BUSY_WAIT ==1'b0 )begin  //normal mood
 			pc_hold = pc_hold + 4; 
 		end
