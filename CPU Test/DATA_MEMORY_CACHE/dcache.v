@@ -58,10 +58,10 @@ module dcache ( clock,
        
        //tag comparison 
        if(tag == cache_tag) begin
-         tagout = #0.9 1;  
+         tagout =  1;  
        end
        else begin
-         tagout = #0.9 0;  
+         tagout =  0;  
        end 
        //select the hit or not
        if(tagout && valid) begin
@@ -76,7 +76,7 @@ module dcache ( clock,
     //if it is reading hit, read the value from cache table 
     always @(*) begin 
         if(read && hit) begin    
-         #1
+         #4
          case (offset) 
             2'b00: readdata = data[31:0];
             2'b01: readdata = data[63:32];

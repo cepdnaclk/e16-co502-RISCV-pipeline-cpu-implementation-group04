@@ -10,6 +10,7 @@ endmodule
 
 //muxtiflexer module 5 bit*********************************************
 module mux_5bit(IN0,IN1,SEL,OUT);
+#1
 	//declaring the ports
 	input [4:0] IN0,IN1;
 	input SEL;
@@ -28,6 +29,7 @@ endmodule
 
 //muxtiflexer module*********************************************
 module mux_32bit(IN0,IN1,SEL,OUT);
+#1
 	//declaring the ports
 	input [31:0] IN0,IN1;
 	input SEL;
@@ -46,6 +48,7 @@ endmodule
 
 //muxtiflexer module*********************************************
 module mux_32bitx3(IN0,IN1,IN2,SEL,OUT);
+#1
 	//declaring the ports
 	input [31:0] IN0,IN1,IN2;
 	input [1:0]SEL;

@@ -23,14 +23,7 @@ module reg_file(IN, OUT1, OUT2, INADDRESS, OUT1ADDRESS, OUT2ADDRESS, WRITEENABLE
 			#2 register[INADDRESS] = IN;     //write data into inaddress aftert 2s delay
 			
 		end
-		if(wflag == 1) begin  //if register update it should read aftr clk posedge
-			#2   //timeing delay for reading
-			if(INADDRESS==OUT1ADDRESS || INADDRESS==OUT2ADDRESS)begin
-			OUT1 = register[OUT1ADDRESS];	
-			OUT2 = register[OUT2ADDRESS];
-			wflag = 0;
-			end
-		end
+		
 	end
 
 	always begin 
@@ -45,7 +38,7 @@ module reg_file(IN, OUT1, OUT2, INADDRESS, OUT1ADDRESS, OUT2ADDRESS, WRITEENABLE
 	end
 	
 		if(i==32)begin //after updating registers are reading
-		#2 //time delay for reading (registers
+		#1 //time delay for reading (registers
 		OUT1 = register[OUT1ADDRESS];	
 		OUT2 = register[OUT2ADDRESS];
 		

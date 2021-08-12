@@ -11,7 +11,7 @@ always @(SIGNIN,IMMI_SEL) begin
 
 
 	if(IMMI_SEL == 3'b000) begin//i type**************************************************************
-	
+	#1
 		if(SIGNIN[31]==1'b0) begin   //for positive in
 			SIGNHOLD = {21'b00000000_00000000_00000,SIGNIN[31:20]};
 		end
@@ -26,7 +26,7 @@ always @(SIGNIN,IMMI_SEL) begin
 	end
 
 	if(IMMI_SEL == 3'b001) begin//i shift type type******************************************************
-	
+	#1
 		if(SIGNIN[24]==1'b0) begin   //for positive in
 			SIGNHOLD = {27'b00000000_00000000_00000000_000,SIGNIN[24:20]};
 		end
@@ -41,6 +41,7 @@ always @(SIGNIN,IMMI_SEL) begin
 	end
 
 	if(IMMI_SEL == 3'b010) begin//Branch type and store type**********************************************************************
+	#1
 		OFFSET = {SIGNIN[31:25],SIGNIN[11:7]};
 		
 		if(OFFSET[11]==1'b0) begin   //for positive in
