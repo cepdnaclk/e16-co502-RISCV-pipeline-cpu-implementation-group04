@@ -20,6 +20,8 @@ reg [7:0] memory_array [1023:0];
 //Initialize instruction memory
 initial
 begin
+
+	//$readmemb("../ASSEMBLER/test.s.machine", memory_array);
     busywait = 0;
     readaccess = 0;
 
@@ -50,8 +52,8 @@ begin
 	mul x7 x1 x5
 	lw x5 0(x0) 
 	*/
-	{memory_array[10'd3],  memory_array[10'd2],  memory_array[10'd1],  memory_array[10'd0]}  = 32'b00000000101000000000000010010011; 
-    {memory_array[10'd7],  memory_array[10'd6],  memory_array[10'd5],  memory_array[10'd4]}  = 32'b00000000010100000110000100010011; 
+	/*{memory_array[10'd3],  memory_array[10'd2],  memory_array[10'd1],  memory_array[10'd0]}  = 32'b00000000101000000000000010010011; 
+    {memory_array[10'd7],  memory_array[10'd6],  memory_array[10'd5],  memory_array[10'd4]}  = 32'b00000000101000000110000100010011; 
     {memory_array[10'd11], memory_array[10'd10], memory_array[10'd9],  memory_array[10'd8]}  = 32'b00000000000000000000000000010011; 
     {memory_array[10'd15], memory_array[10'd14], memory_array[10'd13], memory_array[10'd12]} = 32'b00000000000000000000000000010011;
     {memory_array[10'd19], memory_array[10'd18], memory_array[10'd17], memory_array[10'd16]} = 32'b00000000001000001000000110110011; 
@@ -63,7 +65,7 @@ begin
 	{memory_array[10'd39], memory_array[10'd38], memory_array[10'd37], memory_array[10'd36]} = 32'b00000010001100011010111000100011; 
 	{memory_array[10'd39], memory_array[10'd38], memory_array[10'd37], memory_array[10'd36]} = 32'b00000000000000000000000000010011; 
 	{memory_array[10'd39], memory_array[10'd38], memory_array[10'd37], memory_array[10'd36]} = 32'b01000000001000001000001000110011; 
-	
+	*/
 	/*
 	addi x1 x0 10
 	ori x2 x0 5
@@ -73,6 +75,31 @@ begin
 	lw x2 60(x2)
 	sw x3 60(x3)
 	sub x4 x1 x2
+	*/
+	{memory_array[10'd3],  memory_array[10'd2],  memory_array[10'd1],  memory_array[10'd0]}  = 32'b00000000010100000000000010010011; 
+    {memory_array[10'd7],  memory_array[10'd6],  memory_array[10'd5],  memory_array[10'd4]}  = 32'b00000000010100000110000100010011; 
+    {memory_array[10'd11], memory_array[10'd10], memory_array[10'd9],  memory_array[10'd8]}  = 32'b00000000000000000000000000010011; 
+    {memory_array[10'd15], memory_array[10'd14], memory_array[10'd13], memory_array[10'd12]} = 32'b00000000000000000000000000010011;
+    {memory_array[10'd19], memory_array[10'd18], memory_array[10'd17], memory_array[10'd16]} = 32'b00000000001000001000000110110011; 
+    {memory_array[10'd23], memory_array[10'd22], memory_array[10'd21], memory_array[10'd20]} = 32'b00000000001000001000010001100011; 
+    {memory_array[10'd27], memory_array[10'd26], memory_array[10'd25], memory_array[10'd24]} = 32'b00000000000000000000000000010011; 
+    {memory_array[10'd31], memory_array[10'd30], memory_array[10'd29], memory_array[10'd28]} = 32'b00000000000000000000000000010011; 
+	{memory_array[10'd35], memory_array[10'd34], memory_array[10'd33], memory_array[10'd32]} = 32'b00000000000000000000000000010011; 
+	{memory_array[10'd39], memory_array[10'd38], memory_array[10'd37], memory_array[10'd36]} = 32'b00000011110000010010000100000011;
+	{memory_array[10'd43], memory_array[10'd42], memory_array[10'd41], memory_array[10'd40]} = 32'b00000000000000000000000000010011; 
+	{memory_array[10'd47], memory_array[10'd46], memory_array[10'd45], memory_array[10'd44]} = 32'b00000000000000000000000000010011; 
+	{memory_array[10'd51], memory_array[10'd50], memory_array[10'd49], memory_array[10'd48]} = 32'b00000000000000000000000000010011;
+	{memory_array[10'd55], memory_array[10'd54], memory_array[10'd53], memory_array[10'd52]} = 32'b00000000001100010001000010010011;
+	{memory_array[10'd59], memory_array[10'd58], memory_array[10'd57], memory_array[10'd56]} = 32'b00000000000000000000000000010011;
+	{memory_array[10'd63], memory_array[10'd62], memory_array[10'd61], memory_array[10'd60]} = 32'b00000000000000000000000000010011;
+	/*
+	addi x1 x0 5
+	ori x2 x0 5
+	add x3 x1 x2
+	beq x1 x2 8
+	bne x1 x3 4
+	slli x1 x2 3
+	sub x5 x1 x30
 	*/
 
 end
