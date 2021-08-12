@@ -7,7 +7,7 @@
 	input [4:0] IN_ADDRESS;
 	input [31:0] ALU_RESULT, DATA_READED, PC_NEXT;
 	
-	output reg REG_WRITE_OUT;
+	output reg REG_WRITE_OUT, BRANCH_SEL_OUT;
 	output reg [1:0] MEM_TO_REG_OUT;
 	output reg [2:0] MEM_READ_OUT;
 	output reg [4:0] IN_ADDRESS_OUT;
