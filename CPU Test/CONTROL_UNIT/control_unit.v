@@ -226,7 +226,7 @@ module ctrl_unit(OP,FUN3,FUN7,CLK,RESET,MEM_READ,MEM_WRITE,REG_WRITE,MEM_TO_REG,
 		
 		
 		// BRANCH type ****************************************************************************************************************************
-			if(OP[6:0] == 7'b0100011)  begin  //Itype
+			if(OP[6:0] == 7'b1100011)  begin  //Itype
 				MEM_READ = 3'b000;
 				MEM_WRITE =  3'b000;
 				MEM_TO_REG = 2'b10;
