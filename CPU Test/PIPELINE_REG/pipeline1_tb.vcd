@@ -1,0 +1,122 @@
+$date
+	Thu Aug 05 14:04:19 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	100ps
+$end
+$scope module pipeline1_tb $end
+$var wire 32 ! PC_INCREMENT4_OUT [31:0] $end
+$var wire 32 " INSTRUCTION_OUT [31:0] $end
+$var reg 1 # BUSY_WAIT $end
+$var reg 1 $ CLK $end
+$var reg 32 % INSTRUCTION [31:0] $end
+$var reg 32 & PC_INCREMENT4 [31:0] $end
+$var reg 1 ' RESET $end
+$scope module my_pipeline1 $end
+$var wire 1 # BUSY_WAIT $end
+$var wire 1 $ CLK $end
+$var wire 32 ( INSTRUCTION [31:0] $end
+$var wire 32 ) PC_INCREMENT4 [31:0] $end
+$var wire 1 ' RESET $end
+$var reg 32 * INSTRUCTION_OUT [31:0] $end
+$var reg 32 + PC_INCREMENT4_OUT [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx +
+bx *
+b10100 )
+b1010 (
+0'
+b10100 &
+b1010 %
+0$
+0#
+bx "
+bx !
+$end
+#10
+b11111111111111111111111111111100 !
+b11111111111111111111111111111100 +
+b0 "
+b0 *
+1'
+#40
+1$
+#60
+0'
+#80
+0$
+#120
+1$
+#130
+b1010 "
+b1010 *
+b10100 !
+b10100 +
+#150
+b1000110 &
+b1000110 )
+b111100 %
+b111100 (
+1#
+#160
+0$
+#200
+1$
+#240
+0$
+#280
+1$
+#320
+0$
+#360
+1$
+#400
+0$
+#440
+1$
+#480
+0$
+#520
+1$
+#560
+0$
+#600
+1$
+#640
+0$
+#680
+1$
+#720
+0$
+#760
+1$
+#800
+0$
+#840
+1$
+#880
+0$
+#920
+1$
+#960
+0$
+#1000
+1$
+#1040
+0$
+#1080
+1$
+#1120
+0$
+#1160
+1$
+#1200
+0$
+#1220

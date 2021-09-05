@@ -1,0 +1,271 @@
+$date
+	Thu Aug 05 23:14:22 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	100ps
+$end
+$scope module pipeline2_tb $end
+$var wire 32 ! SIGN_EXTENDED_OUT [31:0] $end
+$var wire 1 " REG_WRITE_OUT $end
+$var wire 1 # REG_DEST_OUT $end
+$var wire 5 $ RD2_OUT [4:0] $end
+$var wire 5 % RD1_OUT [4:0] $end
+$var wire 32 & PC_INCREMENT4_OUT [31:0] $end
+$var wire 32 ' OUT2_OUT [31:0] $end
+$var wire 32 ( OUT1_OUT [31:0] $end
+$var wire 3 ) MEM_WRITE_OUT [2:0] $end
+$var wire 2 * MEM_TO_REG_OUT [1:0] $end
+$var wire 3 + MEM_READ_OUT [2:0] $end
+$var wire 3 , IMMI_SEL_OUT [2:0] $end
+$var wire 1 - BRANCH_OUT $end
+$var wire 2 . ALU_SOURCE_OUT [1:0] $end
+$var wire 5 / ALU_OP_OUT [4:0] $end
+$var reg 5 0 ALU_OP [4:0] $end
+$var reg 2 1 ALU_SOURCE [1:0] $end
+$var reg 1 2 BRANCH $end
+$var reg 1 3 BUSY_WAIT $end
+$var reg 1 4 CLK $end
+$var reg 3 5 IMMI_SEL [2:0] $end
+$var reg 3 6 MEM_READ [2:0] $end
+$var reg 2 7 MEM_TO_REG [1:0] $end
+$var reg 3 8 MEM_WRITE [2:0] $end
+$var reg 32 9 OUT1 [31:0] $end
+$var reg 32 : OUT2 [31:0] $end
+$var reg 32 ; PC_INCREMENT4 [31:0] $end
+$var reg 5 < RD1 [4:0] $end
+$var reg 5 = RD2 [4:0] $end
+$var reg 1 > REG_DEST $end
+$var reg 1 ? REG_WRITE $end
+$var reg 1 @ RESET $end
+$var reg 32 A SIGN_EXTENDED [31:0] $end
+$scope module my_pipeline2 $end
+$var wire 5 B ALU_OP [4:0] $end
+$var wire 2 C ALU_SOURCE [1:0] $end
+$var wire 1 2 BRANCH $end
+$var wire 1 3 BUSY_WAIT $end
+$var wire 1 4 CLK $end
+$var wire 3 D IMMI_SEL [2:0] $end
+$var wire 3 E MEM_READ [2:0] $end
+$var wire 2 F MEM_TO_REG [1:0] $end
+$var wire 3 G MEM_WRITE [2:0] $end
+$var wire 32 H OUT1 [31:0] $end
+$var wire 32 I OUT2 [31:0] $end
+$var wire 32 J PC_INCREMENT4 [31:0] $end
+$var wire 5 K RD1 [4:0] $end
+$var wire 5 L RD2 [4:0] $end
+$var wire 1 > REG_DEST $end
+$var wire 1 ? REG_WRITE $end
+$var wire 1 @ RESET $end
+$var wire 32 M SIGN_EXTENDED [31:0] $end
+$var reg 5 N ALU_OP_OUT [4:0] $end
+$var reg 2 O ALU_SOURCE_OUT [1:0] $end
+$var reg 1 - BRANCH_OUT $end
+$var reg 3 P IMMI_SEL_OUT [2:0] $end
+$var reg 3 Q MEM_READ_OUT [2:0] $end
+$var reg 2 R MEM_TO_REG_OUT [1:0] $end
+$var reg 3 S MEM_WRITE_OUT [2:0] $end
+$var reg 32 T OUT1_OUT [31:0] $end
+$var reg 32 U OUT2_OUT [31:0] $end
+$var reg 32 V PC_INCREMENT4_OUT [31:0] $end
+$var reg 5 W RD1_OUT [4:0] $end
+$var reg 5 X RD2_OUT [4:0] $end
+$var reg 1 # REG_DEST_OUT $end
+$var reg 1 " REG_WRITE_OUT $end
+$var reg 32 Y SIGN_EXTENDED_OUT [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx Y
+bx X
+bx W
+bx V
+bx U
+bx T
+bx S
+bx R
+bx Q
+bx P
+bx O
+bx N
+b1111 M
+b110 L
+b101 K
+b1010 J
+b1100 I
+b1010 H
+b100 G
+b1 F
+b11 E
+b10 D
+b10 C
+b100 B
+b1111 A
+0@
+1?
+1>
+b110 =
+b101 <
+b1010 ;
+b1100 :
+b1010 9
+b100 8
+b1 7
+b11 6
+b10 5
+04
+03
+12
+b10 1
+b100 0
+bx /
+bx .
+x-
+bx ,
+bx +
+bx *
+bx )
+bx (
+bx '
+bx &
+bx %
+bx $
+x#
+x"
+bx !
+$end
+#10
+b0 $
+b0 X
+b0 %
+b0 W
+0"
+b0 !
+b0 Y
+b11111111111111111111111111111100 &
+b11111111111111111111111111111100 V
+b0 '
+b0 U
+b0 (
+b0 T
+b0 /
+b0 N
+b0 ,
+b0 P
+b0 )
+b0 S
+b0 +
+b0 Q
+b0 .
+b0 O
+b0 *
+b0 R
+0#
+0-
+1@
+#40
+14
+#60
+0@
+#70
+b1000 =
+b1000 L
+0>
+#80
+04
+#120
+14
+#130
+b1000 $
+b1000 X
+b101 %
+b101 W
+1"
+b1111 !
+b1111 Y
+b1010 &
+b1010 V
+b1100 '
+b1100 U
+b1010 (
+b1010 T
+b100 /
+b100 N
+b10 ,
+b10 P
+b100 )
+b100 S
+b11 +
+b11 Q
+b10 .
+b10 O
+b1 *
+b1 R
+1-
+#150
+b10001 :
+b10001 I
+b1110 9
+b1110 H
+b11 1
+b11 C
+13
+#160
+04
+#200
+14
+#240
+04
+#280
+14
+#320
+04
+#360
+14
+#400
+04
+#440
+14
+#480
+04
+#520
+14
+#560
+04
+#600
+14
+#640
+04
+#680
+14
+#720
+04
+#760
+14
+#800
+04
+#840
+14
+#880
+04
+#920
+14
+#960
+04
+#1000
+14
+#1040
+04
+#1080
+14
+#1120
+04
+#1160
+14
+#1200
+04
+#1220
